@@ -15,7 +15,7 @@ Create named page-release entries with a page name and URL. Each entry has these
 7. Keyboard check
 8. Final approval
 
-Users can tick checks, see completed/total and percentage, see a ready/not-ready state, filter releases by pending or complete, and delete entries. Data persists in browser `localStorage`.
+Users can optionally add a release-level deadline, owner, and notes; tick checks; see completed/total and percentage; see a ready/not-ready state; filter releases by pending or complete; and delete entries. Releases with deadlines sort before undated releases. The UI identifies overdue dates, today’s date, and dates within six days with text labels. Data persists in browser `localStorage` and can be exported as a versioned JSON backup or restored after strict schema validation.
 
 ## Rules
 - A release is **ready** only when every fixed check is complete.
@@ -23,9 +23,12 @@ Users can tick checks, see completed/total and percentage, see a ready/not-ready
 - URL must be a valid absolute `http:` or `https:` URL.
 - Progress is completed checks divided by all checks, rounded to a whole percent.
 - “Complete” filter means ready; “Pending” means not ready.
+- A deadline is optional; dated releases sort ascending before undated releases.
+- Deadline urgency has accessible text labels: overdue, due today, or due within six days.
+- A backup must be JSON with the supported version and a complete, typed release schema before it can replace local records.
 
 ## Out of scope
-Accounts, authentication, shared workspaces, server/database storage, site crawling, link validation, AI review, notifications, import/export, and hosted deployment.
+Accounts, authentication, shared workspaces, server/database storage, site crawling, link validation, AI review, notifications, and hosted deployment.
 
 ## Acceptance criteria
 - Korean interface exposes creation, completion toggles, progress, filter, and delete actions.

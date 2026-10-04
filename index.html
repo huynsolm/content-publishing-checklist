@@ -23,9 +23,25 @@
       <form id="release-form" novalidate>
         <label>페이지 이름<input id="page-name" name="name" required placeholder="예: 2026 봄 캠페인"></label>
         <label>페이지 URL<input id="page-url" name="url" required type="url" placeholder="https://example.com/campaign"></label>
+        <label>발행 마감일<input id="release-deadline" name="deadline" type="date"></label>
+        <label>담당자<input id="release-owner" name="owner" placeholder="예: 민지"></label>
+        <label class="notes-field">메모<textarea id="release-notes" name="notes" rows="2" placeholder="예: 승인 전 문구를 다시 확인"></textarea></label>
         <button type="submit">체크리스트 만들기 <span aria-hidden="true">→</span></button>
         <p id="form-error" class="form-error" role="alert" hidden></p>
       </form>
+    </section>
+
+    <section class="panel backup-panel" aria-labelledby="backup-heading">
+      <div>
+        <p class="section-kicker">BACKUP</p>
+        <h2 id="backup-heading">백업 및 복원</h2>
+        <p>이 브라우저에만 저장된 발행 항목을 JSON 파일로 백업하거나 복원합니다.</p>
+      </div>
+      <div class="backup-actions">
+        <button id="backup-download" type="button">JSON 백업 다운로드</button>
+        <label class="import-label">JSON 백업 복원<input id="backup-import" type="file" accept="application/json,.json" hidden></label>
+        <p id="backup-feedback" class="backup-feedback" role="status" aria-live="polite"></p>
+      </div>
     </section>
 
     <section class="releases" aria-labelledby="releases-heading">

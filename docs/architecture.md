@@ -5,10 +5,10 @@
 
 ## Data flow
 1. Load JSON array from localStorage key `content-publishing-checklist.releases.v1`.
-2. Normalize stored releases through domain helpers.
-3. Render releases according to the selected filter.
-4. User actions create, toggle, or delete immutable release records.
-5. Save the resulting array to localStorage and render it.
+2. Normalize stored releases through domain helpers, including optional deadline, owner, and notes fields.
+3. Render filtered releases ordered by deadline (dated first).
+4. User actions create, toggle, delete, export, or schema-validated restore immutable release records.
+5. Save resulting records to localStorage and render them.
 
 ## Files
 - `src/checklist.js`: checklist definition, validation, creation, progress, status, filtering, mutation helpers.

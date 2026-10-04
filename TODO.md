@@ -11,3 +11,4 @@
 - [x] Fixed release checklist domain logic under automated tests.
 - [x] Korean browser UI with localStorage persistence.
 - [x] Test, lint, and HTTP browser smoke verification.
+- [x] Release deadlines, owner/notes, deadline urgency, and JSON backup/restore.
