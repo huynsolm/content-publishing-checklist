@@ -1,0 +1,11 @@
+{
+  "name": "content-publishing-checklist",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "lint": "node --check src/checklist.js && node --check src/app.js",
+    "start": "python3 -m http.server 4173"
+  }
+}

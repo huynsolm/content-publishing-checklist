@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="브라우저에서 관리하는 콘텐츠 발행 준비 체크리스트">
+  <title>콘텐츠 발행 체크리스트</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <p class="eyebrow">PUBLISHING READY</p>
+      <h1>콘텐츠 발행 체크리스트</h1>
+      <p>페이지 공개 전 필수 점검을 한 곳에서 관리하세요. 데이터는 이 브라우저에만 저장됩니다.</p>
+    </header>
+
+    <section class="panel create-panel" aria-labelledby="create-heading">
+      <div>
+        <p class="section-kicker">NEW RELEASE</p>
+        <h2 id="create-heading">발행 페이지 추가</h2>
+      </div>
+      <form id="release-form" novalidate>
+        <label>페이지 이름<input id="page-name" name="name" required placeholder="예: 2026 봄 캠페인"></label>
+        <label>페이지 URL<input id="page-url" name="url" required type="url" placeholder="https://example.com/campaign"></label>
+        <button type="submit">체크리스트 만들기 <span aria-hidden="true">→</span></button>
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+      </form>
+    </section>
+
+    <section class="releases" aria-labelledby="releases-heading">
+      <div class="section-header">
+        <div><p class="section-kicker">RELEASES</p><h2 id="releases-heading">발행 준비 현황</h2></div>
+        <div class="filters" role="group" aria-label="발행 상태 필터">
+          <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">전체</button>
+          <button type="button" class="filter" data-filter="pending" aria-pressed="false">준비 중</button>
+          <button type="button" class="filter" data-filter="complete" aria-pressed="false">발행 가능</button>
+        </div>
+      </div>
+      <div id="release-list" class="release-list" aria-live="polite"></div>
+    </section>
+  </main>
+  <template id="empty-state"><div class="empty-state"><strong>아직 발행 페이지가 없습니다.</strong><span>위 양식에서 첫 체크리스트를 만들어 보세요.</span></div></template>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
